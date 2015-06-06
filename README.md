@@ -34,4 +34,4 @@ When you set the x and y values make sure their the same as the design resolutio
 
 Whenever you make a new scene file you have to add it in the ```Android.mk``` located in ```ProjectName/proj.android/jni/Android.mk```
 
-If your game is portrait and in the wrong orientation on your android device it might be that the orientation is set to "landscape" in the ```AndroidManifest.xml```. Just change this line ```android:screenOrientation="landscape"``` and you're good. It's loacted in ```ProjectName/proj.android/AndroidManifest.xml```
+If your game is portrait and in the wrong orientation on your android device it might be that the orientation is set to "landscape" in the ```AndroidManifest.xml```. Just change this line ```android:screenOrientation="landscape"``` and you're good. It's located in ```ProjectName/proj.android/AndroidManifest.xml```
