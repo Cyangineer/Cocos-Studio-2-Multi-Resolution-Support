@@ -27,15 +27,13 @@ bool MainScene::init(){
     if(!Layer::init()){
         return false;
     }
-    // Get screen dimensions and points
-    Size visibleSize = Director::getInstance()->getVisibleSize();
-    Point origin = Director::getInstance()->getVisibleOrigin();
     
-    // load scene file from Cocos Studio
-    auto rootNode = CSLoader::createNode("MainScene.csb");
-    rootNode->setContentSize(visibleSize);
-    ui:: Helper :: doLayout(rootNode);
-    addChild(rootNode);
+    // loads scene file from Cocos Studio and resizes the assets
+    auto rootNode = CSLoader :: createNode ("MainScene.csb");
+    auto size = Director :: getInstance () -> getVisibleSize ();
+    rootNode-> setContentSize (size);
+    ui :: Helper :: doLayout (rootNode);
+    addChild (rootNode);
     
     // Get single touch events
     auto touchListener = EventListenerTouchOneByOne::create();
