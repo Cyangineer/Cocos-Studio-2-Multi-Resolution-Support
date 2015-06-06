@@ -28,7 +28,7 @@ auto glview = director->getOpenGLView();
     // set design resolution to same resolution as what you published it in Cocos Studio and use FIXED_WIDTH for landscape & FIXED_HEIGHT for portrait
     glview->setDesignResolutionSize(960,640, ResolutionPolicy::FIXED_WIDTH);
 ```
-When you set the x and y values make sure their the same as the design resolution you published in your Cocos Studio project
+When you set the x and y values make sure their the same as the design resolution you published in your Cocos Studio project.
 
 # Android Devices
 
