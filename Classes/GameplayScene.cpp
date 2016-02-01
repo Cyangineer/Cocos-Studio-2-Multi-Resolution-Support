@@ -12,10 +12,10 @@ Scene* GameplayScene::createScene(){
     
     // 'layer' is an autorelease object
     auto layer = GameplayScene::create();
-
+    
     // add layer as a child to scene
     scene->addChild(layer);
-
+    
     // return the scene
     return scene;
 }
@@ -27,7 +27,7 @@ bool GameplayScene::init(){
     if(!Layer::init()){
         return false;
     }
-
+    
     // loads scene file from Cocos Studio and resizes the assets
     auto rootNode = CSLoader :: createNode ("GameplayScene.csb");
     auto size = Director :: getInstance () -> getVisibleSize ();
@@ -44,11 +44,11 @@ bool GameplayScene::init(){
     _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
     
     /*// Get multi touch events
-    auto touchesListener = EventListenerTouchAllAtOnce::create();
-    touchesListener->onTouchesBegan = CC_CALLBACK_2(GameplayScene::onTouchesBegan, this);
-    touchesListener->onTouchesMoved = CC_CALLBACK_2(GameplayScene::onTouchesMoved, this);
-    touchesListener->onTouchesEnded = CC_CALLBACK_2(GameplayScene::onTouchesEnded, this);
-    _eventDispatcher->addEventListenerWithSceneGraphPriority(touchesListener, this);*/
+     auto touchesListener = EventListenerTouchAllAtOnce::create();
+     touchesListener->onTouchesBegan = CC_CALLBACK_2(GameplayScene::onTouchesBegan, this);
+     touchesListener->onTouchesMoved = CC_CALLBACK_2(GameplayScene::onTouchesMoved, this);
+     touchesListener->onTouchesEnded = CC_CALLBACK_2(GameplayScene::onTouchesEnded, this);
+     _eventDispatcher->addEventListenerWithSceneGraphPriority(touchesListener, this);*/
     
     return true;
 }
@@ -61,7 +61,7 @@ bool GameplayScene::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event){
 }
 
 void GameplayScene::onTouchMoved(cocos2d::Touch *touch, cocos2d::Event *event){
-     CCLOG("onTouchMoved x = %f, y = %f", touch->getLocation().x, touch->getLocation().y);
+    CCLOG("onTouchMoved x = %f, y = %f", touch->getLocation().x, touch->getLocation().y);
 }
 
 void GameplayScene::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event){
@@ -69,14 +69,12 @@ void GameplayScene::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event){
 }
 
 /*//Multi touches methods
-void GameplayScene::onTouchesBegan(const std::vector<cocos2d::Touch *> &touches, cocos2d::Event *event){
-    CCLOG("MULTI TOUCH BEGAN");
-}
-
-void GameplayScene::onTouchesMoved(const std::vector<cocos2d::Touch *> &touches, cocos2d::Event *event){
-    CCLOG("MULTI TOUCHES HAVE MOVED");
-}
-
-void GameplayScene::onTouchesEnded(const std::vector<cocos2d::Touch *> &touches, cocos2d::Event *event){
-    CCLOG("MULTI TOUCHES HAVE ENDED");
-}*/
+ void GameplayScene::onTouchesBegan(const std::vector<cocos2d::Touch *> &touches, cocos2d::Event *event){
+ CCLOG("MULTI TOUCH BEGAN");
+ }
+ void GameplayScene::onTouchesMoved(const std::vector<cocos2d::Touch *> &touches, cocos2d::Event *event){
+ CCLOG("MULTI TOUCHES HAVE MOVED");
+ }
+ void GameplayScene::onTouchesEnded(const std::vector<cocos2d::Touch *> &touches, cocos2d::Event *event){
+ CCLOG("MULTI TOUCHES HAVE ENDED");
+ }*/
